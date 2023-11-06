@@ -19,3 +19,7 @@ An example to crawl a webpage.
 - dc.relation
 - dc.coverage
 - dc.rights
+
+# API
+
+https://pulipulichen.github.io/crawler-Course-Example/data.csv
