@@ -3,6 +3,7 @@ const moment = require('moment')
 
 const GetHTML = require('./lib/GetHTML.js')
 const ResolveFullURL = require('./lib/ResolveFullURL.js')
+const IDParser = require('./lib/IDParser.js')
 const CrawlItemPage = require('./CrawlItemPage.js')
 
 
@@ -27,7 +28,7 @@ let ParseTable = async (baseURL = 'https://catweb.ncl.edu.tw/QandA', outputCSV =
     let outputItemPage = await CrawlItemPage(itemURL)
 
     outputCSV.push({
-      'id': itemURL,
+      'id': IDParser(itemURL),
       'dc.creator': creator,
       'dc.title': title,
       'dc.date': date,
