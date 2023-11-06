@@ -19,7 +19,7 @@ let ParseTable = async (baseURL = 'https://catweb.ncl.edu.tw/QandA', outputCSV =
     let creator = eleTr.find('td:eq(0)').text().trim()
     let title = eleTr.find('td:eq(1)').text().trim()
     let date = eleTr.find('td:eq(3)').text().trim()
-    data = moment(date, 'YYYY-MM-DD')
+    data = moment(date, 'YYYY-MM-DD').format('').toISOString()
 
     let itemURL = eleTr.find('td a[href]').attr('href').trim()
     itemURL = ResolveFullURL(baseURL, itemURL)
