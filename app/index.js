@@ -1,10 +1,10 @@
-const ParseTable = require('./ParseTable.js')
-const SaveToCSV = require('./SaveToCSV.js')
+const CrawlList = require('./CrawlList.js')
+const SaveToCSV = require('./lib/SaveToCSV.js')
 
 let main = async () => {
   let outputCSV = []
-  outputCSV = await ParseTable(`https://catweb.ncl.edu.tw/QandA`, outputCSV)
-  await SaveToCSV(outputCSV)
+  outputCSV = await CrawlList()
+  await SaveToCSV(outputCSV, '/output/data.csv')
 }
 
 main()
