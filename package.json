@@ -1,0 +1,25 @@
+{
+  "name": "crawler-Course-Example",
+  "version": "1.0.0",
+  "description": "An example to crawl a webpage.",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose up --build",
+    "commit-docker-image": "bash ./docker-build/commit-docker-image.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://pulipuli.chen@gmail.com@github.com/pulipulichen/crawler-Course-Example.git"
+  },
+  "keywords": [
+    "GitHub Action"
+  ],
+  "author": "Pulipuli Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pulipulichen/crawler-Course-Example/issues"
+  },
+  "homepage": "https://github.com/pulipulichen/crawler-Course-Example#readme",
+  "dependencies": {
+  }
+}
