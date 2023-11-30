@@ -6,7 +6,7 @@ const ResolveFullURL = require('./ResolveFullURL.js')
 const DateToISOFormat = require('./DateToISOFormat.js')
 
 // 移除HTML標籤
-const StripHTMLTag = require('./StripHTMLTag.js')
+const StripHTMLTags = require('./StripHTMLTags.js')
 
 // 執行系統指令
 const ShellSpawn = require('./ShellSpawn.js')
@@ -14,6 +14,6 @@ const ShellSpawn = require('./ShellSpawn.js')
 module.exports = {
   ResolveFullURL,
   DateToISOFormat,
-  StripHTMLTag,
+  StripHTMLTags,
   ShellSpawn
 }

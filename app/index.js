@@ -8,7 +8,7 @@ let main = async () => {
     // 如果要執行多個爬蟲，請修改此處
 
     let outputCSV = []
-    outputCSV = await CrawlList1()
+    outputCSV = await CrawlList()
     await SaveToCSV(outputCSV, '/output/data.csv')
 
     // =================================================================

@@ -1,7 +1,7 @@
 const moment = require('moment')
-const StripHTMLTag = require('./StripHTMLTag.js')
+const StripHTMLTags = require('./StripHTMLTags.js')
 
 module.exports = function (date) {
-  date = StripHTMLTag(date)
+  date = StripHTMLTags(date)
   return moment(date).toISOString()
 }

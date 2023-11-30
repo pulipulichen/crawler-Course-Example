@@ -52,7 +52,7 @@ let ParseTable = async (outputArray = [], baseURL) => {
 
     // 將問題儲存到dc.title
     output['dc.title'] = eleTr.find('td:eq(1)').html()
-    output['dc.title'] = Tools.StripHTMLTag(output['dc.title'])
+    output['dc.title'] = Tools.StripHTMLTags(output['dc.title'])
 
     // 將日期儲存到dc.date
     let date = eleTr.find('td:eq(2)').html()
