@@ -19,10 +19,8 @@ let main = async () => {
     outputCSV = await CrawlList()
     await SaveToCSV(outputCSV, '/output/data.csv')
 
-    let result = await Tools.ShellSpawn(`python3 -c 'print("Hello, World!")'`)
-    console.log(result)
-
     // =================================================================
+
   }
   catch (e) {
     console.error(e)

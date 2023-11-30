@@ -75,6 +75,9 @@ let ParseTable = async (outputArray = [], page = 1, baseURL) => {
 
     // 將提問人保存到dc.creator
 
+    // 搭配Python使用
+    output['dc.language'] = await Tools.ShellSpawn(`python3 -c 'import locale; print(locale.getdefaultlocale())'`)
+
     // =================================================================
     // @TODO 7. 啟用抓取下一層網頁
     // 則移除註解「//」即可啟用

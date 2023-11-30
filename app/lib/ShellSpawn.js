@@ -42,7 +42,11 @@ module.exports = function (cmdArray, stderrHandler, errorHandler) {
 
     let output = []
     job.stdout.on("data", data => {
-      console.log(`${data}`);
+      data = `${data}`
+      if (data.endsWith('\n')) {
+        data = data.slice(0, -1)
+      }
+      console.log(data);
       output.push(data)
       // return reject()
     });
@@ -63,6 +67,7 @@ module.exports = function (cmdArray, stderrHandler, errorHandler) {
       if (code !== 0) {
         return reject(code)
       }
+      
       resolve(output.join("\n"))
     });
       

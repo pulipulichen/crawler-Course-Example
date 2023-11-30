@@ -64,16 +64,19 @@ let ParseTable = async (outputArray = [], page = 1, baseURL) => {
     // @TODO 6. 取得其他資訊
     // 請修改此處，以抓取表格對應的欄位。
 
-    // 將問題儲存到dc.title
+    // 將問題保存到dc.title
     output['dc.title'] = eleTr.find('td:eq(1)').html()
     output['dc.title'] = Tools.StripHTMLTags(output['dc.title'])
     
-    // 將日期儲存到dc.date
+    // 將日期保存到dc.date
     let date = eleTr.find('td:eq(2)').html()
     output['dc.date'] = Tools.DateToISOFormat(date)
 
-    // 挑戰題1: 將提問人儲存到dc.creator
+    // 將提問人保存到dc.creator
     output['dc.creator'] = eleTr.find('td:eq(0)').html()
+
+    // 搭配Python使用
+    // output['dc.language'] = await Tools.ShellSpawn(`python3 -c 'import locale; print(locale.getdefaultlocale())'`)
 
     // =================================================================
     // @TODO 7. 啟用抓取下一層網頁
