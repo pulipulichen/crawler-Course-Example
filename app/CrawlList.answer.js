@@ -39,7 +39,7 @@ let ParseTable = async (outputArray = [], baseURL) => {
     let output = {}
 
     // =================================================================
-    // @TODO 3. 取得ID
+    // @TODO 3. 取得下一層網頁的網址跟轉換成ID
     // 請修改此處以抓取正確的資訊。
 
     let itemURL = eleTr.find('td a[href]').attr('href')
