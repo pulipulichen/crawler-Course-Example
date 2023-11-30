@@ -26,6 +26,7 @@ let CrawlItemPage = async (baseURL = 'https://catweb.ncl.edu.tw/QandA/page/31939
 
   // 將分類儲存到dc.type
   output['dc.type'] = $html.find('#block-system-main > div > div.content.node-reference > div > table > tbody > tr:nth-child(3) > td').html()
+  output['dc.type'] = Tools.StripHTMLTags(outputItem['dc.type'])
 
   // =================================================================
 
