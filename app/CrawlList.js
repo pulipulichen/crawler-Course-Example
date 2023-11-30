@@ -52,7 +52,7 @@ let ParseTable = async (outputArray = [], baseURL) => {
     // @TODO 4. 取得其他資訊
     // 請修改此處，以抓取表格對應的欄位。
 
-    // 將問題儲存到dc.title
+    // 將問題儲存到dc.title 
     output['dc.title'] = eleTr.find('td:eq(1)').html()
     output['dc.title'] = Tools.StripHTMLTagsss(output['dc.title'])
     
