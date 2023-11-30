@@ -2,17 +2,23 @@ const CrawlList = require('./CrawlList.js')
 const SaveToCSV = require('./lib/SaveToCSV.js')
 
 let main = async () => {
-  let outputCSV = []
-  outputCSV = await CrawlList1()
-  await SaveToCSV(outputCSV, '/output/data.csv')
+  try {
+    // =================================================================
+    // @TODO 1. 執行爬蟲
+    // 如果要執行多個爬蟲，請修改此處
+
+    let outputCSV = []
+    outputCSV = await CrawlList1()
+    await SaveToCSV(outputCSV, '/output/data.csv')
+
+    // =================================================================
+  }
+  catch (e) {
+    console.error(e)
+    process.exit(1)
+  }
 }
 
 // ===========
 
-try {
-  main()
-}
-catch (e) {
-  console.error(e)
-  process.exit(1)
-}
+main()
