@@ -3,7 +3,7 @@ const GetHTML = require('./lib/GetHTML.js')
 
 // =================================================================
 // 工具
-// 詳情請查詢：
+// 詳情請查詢：https://github.com/pulipulichen/crawler-Course-Example/blob/main/app/lib/Tools.js
 
 const Tools = require('./lib/Tools.js')
 

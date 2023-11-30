@@ -4,18 +4,9 @@ const CrawlItem = require('./CrawlItem.js')
 
 // =================================================================
 // 工具
+// 詳情請查詢：https://github.com/pulipulichen/crawler-Course-Example/blob/main/app/lib/Tools.js
 
-// 將相對網址還原為絕對網址
-const ResolveFullURL = require('./lib/ResolveFullURL.js')
-
-// 將日期轉換成ISO標準格式
-const ResolveDate = require('./lib/ResolveDate.js')
-
-// 移除HTML標籤
-const StripHTMLTag = require('./lib/StripHTMLTag.js')
-
-// 執行系統指令
-const ShellSpawn = require('./lib/ShellSpawn.js')
+const Tools = require('./lib/Tools.js')
 
 // =================================================================
 // @TODO 1. 指定要抓取的啟始網址
@@ -37,6 +28,8 @@ let ParseTable = async (outputArray = [], baseURL) => {
   // @TODO 2. 決定要抓取列表的範圍
   // 請修改此處以抓取正確的範圍。
   let tableSelector = '#block-system-main > div > div > div.view-content > table > tbody > tr'
+
+  // =================================================================
 
   let trList = $html.find(tableSelector)
   for (let i = 0; i < trList.length; i++) {
@@ -61,10 +54,11 @@ let ParseTable = async (outputArray = [], baseURL) => {
 
     // 將問題儲存到dc.title
     output['dc.title'] = eleTr.find('td:eq(1)').html()
-    let date = eleTr.find('td:eq(2)').html()
+    
 
     // 將日期儲存到dc.date
-    output['dc.date'] = ResolveDate(date)
+    let date = eleTr.find('td:eq(2)').html()
+    output['dc.date'] = Tools.DateToISOFormat(date)
 
     // =================================================================
     // @TODO 5. 抓取下一層網頁

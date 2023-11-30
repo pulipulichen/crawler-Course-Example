@@ -3,7 +3,7 @@
 const ResolveFullURL = require('./ResolveFullURL.js')
 
 // 將日期轉換成ISO標準格式
-const ResolveDate = require('./ResolveDate.js')
+const DateToISOFormat = require('./DateToISOFormat.js')
 
 // 移除HTML標籤
 const StripHTMLTag = require('./StripHTMLTag.js')
@@ -13,7 +13,7 @@ const ShellSpawn = require('./ShellSpawn.js')
 
 module.exports = {
   ResolveFullURL,
-  ResolveDate,
+  DateToISOFormat,
   StripHTMLTag,
   ShellSpawn
 }

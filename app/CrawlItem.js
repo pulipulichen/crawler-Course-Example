@@ -3,18 +3,9 @@ const GetHTML = require('./lib/GetHTML.js')
 
 // =================================================================
 // 工具
+// 詳情請查詢：https://github.com/pulipulichen/crawler-Course-Example/blob/main/app/lib/Tools.js
 
-// 將相對網址還原為絕對網址
-const ResolveFullURL = require('./lib/ResolveFullURL.js')
-
-// 將日期轉換成ISO標準格式
-const ResolveDate = require('./lib/ResolveDate.js')
-
-// 移除HTML標籤
-const StripHTMLTag = require('./lib/StripHTMLTag.js')
-
-// 執行系統指令
-const ShellSpawn = require('./lib/ShellSpawn.js')
+const Tools = require('./lib/Tools.js')
 
 // =================================================================
 

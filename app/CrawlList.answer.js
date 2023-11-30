@@ -4,18 +4,9 @@ const CrawlItem = require('./CrawlItem.js')
 
 // =================================================================
 // 工具
+// 詳情請查詢：https://github.com/pulipulichen/crawler-Course-Example/blob/main/app/lib/Tools.js
 
-// 將相對網址還原為絕對網址
-const ResolveFullURL = require('./lib/ResolveFullURL.js')
-
-// 將日期轉換成ISO標準格式
-const ResolveDate = require('./lib/ResolveDate.js')
-
-// 移除HTML標籤
-const StripHTMLTag = require('./lib/StripHTMLTag.js')
-
-// 執行系統指令
-const ShellSpawn = require('./lib/ShellSpawn.js')
+const Tools = require('./lib/Tools.js')
 
 // =================================================================
 // @TODO 1. 指定要抓取的啟始網址
@@ -50,7 +41,7 @@ let ParseTable = async (outputArray = [], baseURL) => {
     // 請修改此處以抓取正確的資訊。
 
     let itemURL = eleTr.find('td a[href]').attr('href')
-    itemURL = ResolveFullURL(baseURL, itemURL)
+    itemURL = Tools.ResolveFullURL(baseURL, itemURL)
 
     output['id'] = itemURL
     output['dc.identifier'] = itemURL
@@ -61,11 +52,11 @@ let ParseTable = async (outputArray = [], baseURL) => {
 
     // 將問題儲存到dc.title
     output['dc.title'] = eleTr.find('td:eq(1)').html()
-    output['dc.title'] = StripHTMLTag(output['dc.title'])
+    output['dc.title'] = Tools.StripHTMLTag(output['dc.title'])
 
     // 將日期儲存到dc.date
     let date = eleTr.find('td:eq(2)').html()
-    output['dc.date'] = ResolveDate(date)
+    output['dc.date'] = Tools.DateToISOFormat(date)
 
     // 將提問者儲存到dc.creator
     output['dc.creator'] = eleTr.find('td:eq(0)').html()
