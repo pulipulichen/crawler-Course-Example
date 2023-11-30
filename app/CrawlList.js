@@ -16,7 +16,7 @@ const START_BASE_URL = 'https://catweb.ncl.edu.tw/QandA'
 // =================================================================
 
 // =================================================================
-// @TODO 2. 抓取下一頁列表
+// @TODO 2. 抓取下一頁列表的連結選取器
 // 請修改此處以抓取正確的範圍。
 let nextPageLinkSelector = '#block-system-main > div > div > div.item-list > ul > li.pager-next > a'
 
@@ -37,7 +37,7 @@ let ParseTable = async (outputArray = [], page = 1, baseURL) => {
   let $html = $(html)
 
   // =================================================================
-  // @TODO 4. 決定要抓取列表的範圍
+  // @TODO 4. 決定要抓取列表的選取器
   // 請修改此處以抓取正確的範圍。
   let tableSelector = '#block-system-main > div > div > div.view-content > table > tbody > tr'
 
@@ -64,20 +64,20 @@ let ParseTable = async (outputArray = [], page = 1, baseURL) => {
     // @TODO 6. 取得其他資訊
     // 請修改此處，以抓取表格對應的欄位。
 
-    // 將問題儲存到dc.title
+    // 將問題保存到dc.title
     output['dc.title'] = eleTr.find('td:eq(1)').html()
     output['dc.title'] = Tools.StripHTMLTags(output['dc.title'])
     
 
-    // 將日期儲存到dc.date
+    // 將日期保存到dc.date
     let date = eleTr.find('td:eq(2)').html()
     output['dc.date'] = Tools.DateToISOFormat(date)
 
-    // 將提問人儲存到dc.creator
+    // 將提問人保存到dc.creator
 
     // =================================================================
-    // @TODO 7. 抓取下一層網頁
-    // 如果需要使用，則移除註解「//」即可
+    // @TODO 7. 啟用抓取下一層網頁
+    // 則移除註解「//」即可啟用
     // 請注意itemURL必須正確
 
     //await CrawlItem(itemURL, output)

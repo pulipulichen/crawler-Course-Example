@@ -16,7 +16,7 @@ const START_BASE_URL = 'https://catweb.ncl.edu.tw/QandA'
 // =================================================================
 
 // =================================================================
-// @TODO 2. 抓取下一頁列表
+// @TODO 2. 抓取下一頁列表的連結選取器
 // 請修改此處以抓取正確的範圍。
 let nextPageLinkSelector = '#block-system-main > div > div > div.item-list > ul > li.pager-next > a'
 
@@ -37,7 +37,7 @@ let ParseTable = async (outputArray = [], page = 1, baseURL) => {
   let $html = $(html)
 
   // =================================================================
-  // @TODO 4. 決定要抓取列表的範圍
+  // @TODO 4. 決定要抓取列表的選取器
   // 請修改此處以抓取正確的範圍。
   let tableSelector = '#block-system-main > div > div > div.view-content > table > tbody > tr'
 
@@ -76,8 +76,8 @@ let ParseTable = async (outputArray = [], page = 1, baseURL) => {
     output['dc.creator'] = eleTr.find('td:eq(0)').html()
 
     // =================================================================
-    // @TODO 7. 抓取下一層網頁
-    // 如果需要使用，則移除註解「//」即可
+    // @TODO 7. 啟用抓取下一層網頁
+    // 則移除註解「//」即可啟用
     // 請注意itemURL必須正確
 
     //await CrawlItem(itemURL, output)
