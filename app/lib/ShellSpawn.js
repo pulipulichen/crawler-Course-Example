@@ -40,9 +40,10 @@ module.exports = function (cmdArray, stderrHandler, errorHandler) {
 
     let job = spawn(cmdArray[0], parameters, { shell: true })
 
-
+    let output = []
     job.stdout.on("data", data => {
       console.log(`${data}`);
+      output.push(data)
       // return reject()
     });
     
@@ -62,7 +63,7 @@ module.exports = function (cmdArray, stderrHandler, errorHandler) {
       if (code !== 0) {
         return reject(code)
       }
-      resolve()
+      resolve(output.join("\n"))
     });
       
   })

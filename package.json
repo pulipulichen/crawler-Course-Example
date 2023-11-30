@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "docker-compose down; docker-compose up --build",
-    "commit-docker-image": "bash ./docker-build/commit-docker-image.sh"
+    "commit-docker-image": "bash ./docker-build/commit-docker-image.sh",
+    "bash": "docker-compose run app bash"
   },
   "repository": {
     "type": "git",
