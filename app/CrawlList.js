@@ -74,11 +74,18 @@ let ParseTable = async (outputArray = [], baseURL) => {
 
 
   // =================================================================
-  // @TODO 2. 決定要抓取列表的範圍
+  // @TODO 6. 抓取下一頁列表
   // 請修改此處以抓取正確的範圍。
-  let tableSelector = '#block-system-main > div > div > div.view-content > table > tbody > tr'
+  let nextPageLinkSelector = '#block-system-main > div > div > div.item-list > ul > li.pager-next > a'
 
   // =================================================================
+  let nextPageLink = $html.find(nextPageLinkSelector)
+  if (nextPageLink.length > 0) {
+    let nextPageURL = nextPageLink[0].attr('href')
+    nextPageURL = Tools.ResolveFullURL(nextPageURL)
+
+    // outputArray = await ParseTable(outputArray, nextPageURL)
+  }
 
   return outputArray
 }
