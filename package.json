@@ -4,7 +4,7 @@
   "description": "An example to crawl a webpage.",
   "main": "index.js",
   "scripts": {
-    "start": "docker-compose up --build",
+    "start": "docker-compose down; docker-compose up --build",
     "commit-docker-image": "bash ./docker-build/commit-docker-image.sh"
   },
   "repository": {

@@ -60,7 +60,7 @@ let ParseTable = async (outputArray = [], baseURL) => {
     let date = eleTr.find('td:eq(2)').html()
     output['dc.date'] = Tools.DateToISOFormat(date)
 
-    // 將提問者儲存到dc.creator
+    // 將提問人儲存到dc.creator
     output['dc.creator'] = eleTr.find('td:eq(0)').html()
 
     // =================================================================

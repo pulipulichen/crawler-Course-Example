@@ -83,8 +83,8 @@ let ParseTable = async (outputArray = [], baseURL) => {
   if (nextPageLink.length > 0) {
     let nextPageURL = nextPageLink[0].href
     nextPageURL = Tools.ResolveFullURL(nextPageURL)
-
-    outputArray = await ParseTable(outputArray, nextPageURL)
+    console.log(nextPageURL)
+    // outputArray = await ParseTable(outputArray, nextPageURL)
   }
 
   return outputArray
