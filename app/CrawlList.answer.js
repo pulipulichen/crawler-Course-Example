@@ -29,6 +29,8 @@ let ParseTable = async (outputArray = [], baseURL) => {
   // 請修改此處以抓取正確的範圍。
   let tableSelector = '#block-system-main > div > div > div.view-content > table > tbody > tr'
 
+  // =================================================================
+
   let trList = $html.find(tableSelector)
   for (let i = 0; i < trList.length; i++) {
     let eleTr = trList[i]

@@ -43,7 +43,7 @@ let ParseTable = async (outputArray = [], baseURL) => {
     // 請修改此處以抓取正確的資訊。
 
     let itemURL = eleTr.find('td a[href]').attr('href')
-    itemURL = ResolveFullURL(baseURL, itemURL)
+    itemURL = Tools.ResolveFullURL(baseURL, itemURL)
 
     output['id'] = itemURL
     output['dc.identifier'] = itemURL
@@ -71,6 +71,14 @@ let ParseTable = async (outputArray = [], baseURL) => {
     
     outputArray.push(output)
   }
+
+
+  // =================================================================
+  // @TODO 2. 決定要抓取列表的範圍
+  // 請修改此處以抓取正確的範圍。
+  let tableSelector = '#block-system-main > div > div > div.view-content > table > tbody > tr'
+
+  // =================================================================
 
   return outputArray
 }
