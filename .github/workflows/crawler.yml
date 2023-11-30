@@ -21,13 +21,13 @@ jobs:
       # ----------------------------------------------------------------
       # https://github.com/orgs/community/discussions/26351#discussioncomment-3251597
 
-      - name: free disk space
-        run: | 
-          sudo swapoff -a
-          sudo rm -f /swapfile
-          sudo apt clean
-          docker rmi $(docker image ls -aq)
-          df -h
+      # - name: free disk space
+      #   run: | 
+      #     sudo swapoff -a
+      #     sudo rm -f /swapfile
+      #     sudo apt clean
+      #     docker rmi $(docker image ls -aq)
+      #     df -h
 
       # ----------------------------------------------------------------
 
@@ -96,7 +96,7 @@ jobs:
 
       - name: Main
         run: |
-          docker-compose up
+          docker-compose up --abort-on-container-exit
 
       # ----------------------------------------------------------------
 

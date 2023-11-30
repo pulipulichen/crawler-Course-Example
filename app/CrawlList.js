@@ -5,19 +5,21 @@ const CrawlItem = require('./CrawlItem.js')
 // =================================================================
 // 工具
 
-// 處理網址
+// 將相對網址還原為絕對網址
 const ResolveFullURL = require('./lib/ResolveFullURL.js')
 
-// 處理日期
+// 將日期轉換成ISO標準格式
 const ResolveDate = require('./lib/ResolveDate.js')
 
-// 移除HTML
+// 移除HTML標籤
 const StripHTML = require('./lib/StripHTML.js')
 
-// =================================================================
-// 1. 指定要抓取的啟始網址
-// @TODO 請修改此處以抓取正確的資訊。
+// 執行系統指令
+const ShellSpawn = require('./lib/ShellSpawn.js')
 
+// =================================================================
+// @TODO 1. 指定要抓取的啟始網址
+// 請對照此處網址，確保跟你的爬蟲目標一致
 const START_BASE_URL = 'https://catweb.ncl.edu.tw/QandA'
 
 // =================================================================
@@ -31,7 +33,12 @@ let ParseTable = async (outputArray = [], baseURL) => {
   
   let $html = $(html)
 
-  let trList = $html.find('#block-system-main > div > div > div.view-content > table tbody tr')
+  // =================================================================
+  // @TODO 2. 決定要抓取列表的範圍
+  // 請修改此處以抓取正確的範圍。
+  let tableSelector = '#block-system-main > div > div > div.view-content > table > tbody > tr'
+
+  let trList = $html.find(tableSelector)
   for (let i = 0; i < trList.length; i++) {
     let eleTr = trList[i]
     eleTr = $(eleTr)
@@ -39,8 +46,8 @@ let ParseTable = async (outputArray = [], baseURL) => {
     let output = {}
 
     // =================================================================
-    // 2. 取得ID
-    // @TODO 請修改此處以抓取正確的資訊。
+    // @TODO 3. 取得ID
+    // 請修改此處以抓取正確的資訊。
 
     let itemURL = eleTr.find('td a[href]').attr('href')
     itemURL = ResolveFullURL(baseURL, itemURL)
@@ -49,8 +56,8 @@ let ParseTable = async (outputArray = [], baseURL) => {
     output['dc.identifier'] = itemURL
 
     // =================================================================
-    // 3. 取得其他資訊
-    // @TODO 請修改此處以抓取正確的資訊。
+    // @TODO 4. 取得其他資訊
+    // 請修改此處，以抓取表格對應的欄位。
 
     // 將問題儲存到dc.title
     output['dc.title'] = eleTr.find('td:eq(1)').html()
@@ -60,8 +67,8 @@ let ParseTable = async (outputArray = [], baseURL) => {
     output['dc.date'] = ResolveDate(date)
 
     // =================================================================
-    // 4. 取得更深入的資訊
-    // @TODO 如果需要使用，則移除註解「//」即可
+    // @TODO 5. 抓取下一層網頁
+    // 如果需要使用，則移除註解「//」即可
 
     //await CrawlItem(itemURL, output)
 
