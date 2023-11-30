@@ -12,7 +12,7 @@ const ResolveFullURL = require('./lib/ResolveFullURL.js')
 const ResolveDate = require('./lib/ResolveDate.js')
 
 // 移除HTML標籤
-const StripHTML = require('./lib/StripHTML.js')
+const StripHTMLTag = require('./lib/StripHTMLTag.js')
 
 // 執行系統指令
 const ShellSpawn = require('./lib/ShellSpawn.js')
@@ -61,7 +61,7 @@ let ParseTable = async (outputArray = [], baseURL) => {
 
     // 將問題儲存到dc.title
     output['dc.title'] = eleTr.find('td:eq(1)').html()
-    output['dc.title'] = StripHTML(output['dc.title'])
+    output['dc.title'] = StripHTMLTag(output['dc.title'])
 
     // 將日期儲存到dc.date
     let date = eleTr.find('td:eq(2)').html()

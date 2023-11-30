@@ -3,18 +3,9 @@ const GetHTML = require('./lib/GetHTML.js')
 
 // =================================================================
 // 工具
+// 詳情請查詢：
 
-// 將相對網址還原為絕對網址
-const ResolveFullURL = require('./lib/ResolveFullURL.js')
-
-// 將日期轉換成ISO標準格式
-const ResolveDate = require('./lib/ResolveDate.js')
-
-// 移除HTML標籤
-const StripHTML = require('./lib/StripHTML.js')
-
-// 執行系統指令
-const ShellSpawn = require('./lib/ShellSpawn.js')
+const Tools = require('./lib/Tools.js')
 
 // =================================================================
 
@@ -31,7 +22,7 @@ let CrawlItemPage = async (baseURL = 'https://catweb.ncl.edu.tw/QandA/page/31939
 
   // 將回覆儲存到dc.description
   output['dc.description'] = $html.find('#block-system-main > div > div.content.node-reference > div > table > tbody > tr:nth-child(4) > td > div > div').html()
-  output['dc.description'] = StripHTML(outputItem['dc.description'])
+  output['dc.description'] = Tools.StripHTMLTag(outputItem['dc.description'])
 
   // 將分類儲存到dc.type
   output['dc.type'] = $html.find('#block-system-main > div > div.content.node-reference > div > table > tbody > tr:nth-child(3) > td').html()
