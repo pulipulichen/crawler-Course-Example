@@ -18,6 +18,10 @@ A fully automated solution for web scraping. It includes automatic scheduling an
 
 - [網路爬蟲實作 - 112-1 資訊儲存與檢索](https://docs.google.com/presentation/d/1z5dZUTdesub-muPJ7dMhar9f7d4hIr9OySLaylacYYU/edit?usp=sharing)
 
+# Citation
+
+Chen, Y.-T. (2024). *Crawler-Course-Example* (20240518.210053) [Computer software]. Zenodo. [https://doi.org/10.5281/ZENODO.11214115](https://doi.org/10.5281/ZENODO.11214115)
+
 ----
 
 # Memo
