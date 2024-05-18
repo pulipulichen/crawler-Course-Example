@@ -29,6 +29,7 @@
     "url": "https://github.com/pulipulichen/crawler-Course-Example/issues"
   },
   "homepage": "https://github.com/pulipulichen/crawler-Course-Example#readme",
+  "doi": "10.5281/zenodo.11214115",
   "dependencies": {
   }
 }

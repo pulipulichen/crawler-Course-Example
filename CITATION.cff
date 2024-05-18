@@ -9,3 +9,6 @@ title: "crawler-Course-Example"
 license: "MIT"
 repository-code: "https://github.com/pulipulichen/crawler-Course-Example"
 abstract: "An example to crawl a webpage."
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.11214115

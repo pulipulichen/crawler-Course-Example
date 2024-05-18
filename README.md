@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/714862367.svg)](https://zenodo.org/doi/10.5281/zenodo.11214115)
+
 # crawler-Course-Example: 自動排程網路爬蟲教材
 
 A fully automated solution for web scraping. It includes automatic scheduling and triggering through GitHub Actions, data collection using Node.js's Puppeteer, and data preservation on GitHub Pages for use by others.
