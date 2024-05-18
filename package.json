@@ -6,14 +6,17 @@
   "scripts": {
     "start": "docker-compose down; docker-compose up --build",
     "commit-docker-image": "bash ./docker-build/commit-docker-image.sh",
-    "bash": "docker-compose run app bash"
+    "bash": "docker-compose run app bash",
+    "tag": "./build/tag.sh"
   },
   "repository": {
     "type": "git",
     "url": "git+https://pulipuli.chen@gmail.com@github.com/pulipulichen/crawler-Course-Example.git"
   },
   "keywords": [
-    "GitHub Action"
+    "GitHub Action",
+    "Node.js",
+    "Puppeteer"
   ],
   "author": "Pulipuli Chen",
   "license": "MIT",

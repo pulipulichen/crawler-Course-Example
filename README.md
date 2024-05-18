@@ -1,6 +1,6 @@
 # crawler-Course-Example: 自動排程網路爬蟲教材
 
-https://docs.google.com/presentation/d/1z5dZUTdesub-muPJ7dMhar9f7d4hIr9OySLaylacYYU/edit?usp=sharing
+A fully automated solution for web scraping. It includes automatic scheduling and triggering through GitHub Actions, data collection using Node.js's Puppeteer, and data preservation on GitHub Pages for use by others.
 
 一套網路爬蟲的全自動解決方案。包含了透過GitHub Action自動排程啟動、使用Node.js的Puppet蒐集資料、以GitHub Pages保存資料供其他人使用。
 
@@ -8,8 +8,9 @@ https://docs.google.com/presentation/d/1z5dZUTdesub-muPJ7dMhar9f7d4hIr9OySLaylac
 
 ## Technoligies
 
-- Node.js
-- GitHub Action: 自動排程執行的DevOps方案。
+- **Node.js**
+- **GitHub Action**: 自動排程執行的DevOps方案。
+- **Puppeteer**: Node.js的瀏覽器模擬工具。
 
 ## Slide
 
