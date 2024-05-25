@@ -8,7 +8,7 @@ A fully automated solution for web scraping. It includes automatic scheduling an
 
 ![](https://blogger.googleusercontent.com/img/a/AVvXsEiymaRroiyKWA-PmXVDoBS-U7UNNhz-CIqeerjUBvdIxunZ_Zvz-g0brQBiDvG-NNIjVVDF6ohOK1spJ9r0ipdu7Un_37wsorFkYL1hNWui9AXk-jLYlho1CB08TQ6F-lh2qHNAw3QI6tVu7nzKPB_kOchre9C3M70xCcWybx4k6zD6_yWQn0AQzw)
 
-## Technoligies
+## Techniques
 
 - **Node.js**
 - **GitHub Action**: 自動排程執行的DevOps方案。
